@@ -1,0 +1,11 @@
+[project]
+name = "comfyui-h3-director"
+description = "MiniMax H3 漫剧导演台：多段时间轴、参考素材、段级音频、单段重抽、尾帧接力与自动合并"
+version = "2.40.2"
+license = { text = "MIT" }
+dependencies = ["imageio-ffmpeg>=0.6.0", "opencv-python"]
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI H3 漫剧导演台"
+Icon = ""
