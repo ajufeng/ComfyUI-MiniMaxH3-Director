@@ -14109,58 +14109,7 @@ function buildStudio(node) {
         try { return new URL(String(value || "").trim()).host.toLowerCase(); }
         catch (e) { return ""; }
       };
-      const apiPresets = {
-        codexcn: {
-          label: "CodexCN / Responses", base: "https://api2.codexcn.com/v1",
-          models: [
-            ["gpt-5.6-sol", "GPT-5.6 Sol（质量/编程）"],
-            ["gpt-5.6-terra", "GPT-5.6 Terra（均衡）"],
-            ["gpt-5.6-luna", "GPT-5.6 Luna（快速/省额度）"],
-          ],
-        },
-        openai: {
-          label: "OpenAI 官方", base: "https://api.openai.com/v1",
-          models: [
-            ["gpt-5", "GPT-5（图文/质量）"],
-            ["gpt-5-mini", "GPT-5 mini（图文/省流量）"],
-            ["gpt-4.1", "GPT-4.1（图文）"],
-            ["gpt-4.1-mini", "GPT-4.1 mini（图文/省流量）"],
-          ],
-        },
-        deepseek: {
-          label: "DeepSeek 官方", base: "https://api.deepseek.com/v1",
-          models: [
-            ["deepseek-chat", "DeepSeek Chat（文本）"],
-            ["deepseek-reasoner", "DeepSeek Reasoner（文本/推理）"],
-          ],
-        },
-        openrouter: {
-          label: "OpenRouter", base: "https://openrouter.ai/api/v1",
-          models: [
-            ["openai/gpt-5", "OpenRouter · GPT-5（图文）"],
-            ["openai/gpt-5-mini", "OpenRouter · GPT-5 mini（图文）"],
-            ["anthropic/claude-sonnet-4", "OpenRouter · Claude Sonnet 4（图文）"],
-            ["google/gemini-2.5-pro", "OpenRouter · Gemini 2.5 Pro（图文）"],
-          ],
-        },
-        siliconflow: {
-          label: "硅基流动", base: "https://api.siliconflow.cn/v1",
-          models: [
-            ["Qwen/Qwen2.5-VL-72B-Instruct", "Qwen2.5-VL-72B（图文）"],
-            ["deepseek-ai/DeepSeek-V3", "DeepSeek V3（文本）"],
-            ["deepseek-ai/DeepSeek-R1", "DeepSeek R1（文本/推理）"],
-          ],
-        },
-        dashscope: {
-          label: "阿里云百炼", base: "https://dashscope.aliyuncs.com/compatible-mode/v1",
-          models: [
-            ["qwen-vl-max", "Qwen VL Max（图文）"],
-            ["qwen-plus", "Qwen Plus（文本）"],
-            ["qwen-max", "Qwen Max（文本）"],
-          ],
-        },
-        custom: { label: "自定义 / 中转站", base: "", models: [] },
-      };
+      const apiPresets = H3_API_PRESETS;
       const apiPreset = document.createElement("select");
       Object.entries(apiPresets).forEach(([value, preset]) => {
         const option = document.createElement("option");
